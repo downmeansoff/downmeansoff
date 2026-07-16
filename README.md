@@ -30,6 +30,14 @@ My focus is not adding a chatbot to an existing process. I turn business operati
 
 ---
 
+## Education
+
+**Samara National Research University (Samara University)**  
+5th-year Specialist student — **Information Security of Automated Systems**  
+Specialty: **10.05.03 · Информационная безопасность автоматизированных систем**
+
+---
+
 ## AI & Agentic Systems
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -170,6 +178,9 @@ I use coding agents as an engineering force multiplier, not as an uncontrolled r
 <img height="175" src="https://github-readme-streak-stats.herokuapp.com?user=downmeansoff&theme=github-dark-blue&hide_border=true" alt="GitHub streak" />
 
 <img width="98%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=downmeansoff&theme=github_dark" alt="Contribution graph" />
+
+<img height="180" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=downmeansoff&theme=github_dark" alt="Top languages by commit" />
+<img height="180" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=downmeansoff&theme=github_dark" alt="Top languages by repository" />
 
 </div>
 
