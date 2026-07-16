@@ -5,6 +5,7 @@
 [![Telegram](https://img.shields.io/badge/Telegram-@oldkindmvn-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/oldkindmvn)
 [![Email](https://img.shields.io/badge/Email-fortune.tavern%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:fortune.tavern@gmail.com)
 [![GitHub](https://img.shields.io/badge/GitHub-downmeansoff-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/downmeansoff)
+![English](https://img.shields.io/badge/English-B2%2B-0A66C2?style=for-the-badge&logo=googletranslate&logoColor=white)
 
 <br/>
 
@@ -34,7 +35,8 @@ My focus is not adding a chatbot to an existing process. I turn business operati
 
 **Samara National Research University (Samara University)**  
 5th-year Specialist student — **Information Security of Automated Systems**  
-Specialty: **10.05.03 · Информационная безопасность автоматизированных систем**
+Specialty: **10.05.03 · Информационная безопасность автоматизированных систем**  
+English: **B2+ · Upper-Intermediate**
 
 ---
 
