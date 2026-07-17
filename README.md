@@ -28,6 +28,7 @@ My focus is not adding a chatbot to an existing process. I turn business operati
 - Built a marketing workflow with **7 specialized AI agents**
 - Developed an internal CRM with **8 pipeline stages** and **9 automatically calculated business KPIs**
 - Introduced an AgentOps workflow for scoped implementation, review, testing, and controlled production delivery
+- Own the operational lifecycle across Linux, Docker, CI/CD, staging, monitoring, incident response, and rollback
 
 ---
 
@@ -51,18 +52,36 @@ English: **B2+ · Upper-Intermediate**
 
 `Agentic workflows` `Multi-agent systems` `Structured outputs` `JSON Schema` `Tool calling` `Human-in-the-loop` `LLM evaluation` `Safety guardrails` `Retries & fallbacks` `Prompt engineering` `AgentOps`
 
-## Backend, Data & Infrastructure
+## Backend & Data
 
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+
+`REST APIs` `SQL` `PostgreSQL` `SQLAlchemy` `Alembic` `Prisma` `Webhooks` `Billing` `Entitlements` `Idempotency`
+
+## DevOps & Platform Engineering
+
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white)
 ![Sentry](https://img.shields.io/badge/Sentry-362D59?style=for-the-badge&logo=sentry&logoColor=white)
+![n8n](https://img.shields.io/badge/n8n-EA4B71?style=for-the-badge&logo=n8n&logoColor=white)
 
-`REST APIs` `PostgreSQL` `SQLAlchemy` `Alembic` `Prisma` `Webhooks` `Billing` `Entitlements` `Idempotency` `CI/CD` `Monitoring` `Incident response` `VLESS/Xray`
+I design and operate infrastructure as part of the product lifecycle rather than treating deployment as a final hand-off.
+
+- Operate **7 distributed production nodes** serving **1,000+ users** with **99%+ availability**
+- Built health-aware routing, automated health checks, egress verification, node exclusion, and recovery paths
+- Designed GitHub Actions pipelines covering linting, tests, staging validation, manual production approval, and controlled rollout
+- Use Docker and Docker Compose for reproducible environments and Linux-based service operation
+- Automate recurring operational tasks and integrations with **Bash, cron, and n8n**
+- Implement monitoring and operational visibility with Prometheus, Sentry, custom telemetry agents, audit logs, and incident runbooks
+- Apply staging, feature flags, smoke tests, rollback procedures, and human-controlled production changes
+
+`Docker` `Docker Compose` `Linux` `GitHub Actions` `CI/CD` `Bash` `cron` `n8n` `Prometheus` `Sentry` `Health checks` `Rolling deployment` `Smoke tests` `Rollback` `Incident response` `VLESS/Xray`
+
+[View the sanitized DevOps and distributed-platform reference →](https://github.com/downmeansoff/distributed-relay-platform)
 
 ---
 
@@ -106,7 +125,7 @@ Internal acquisition CRM connecting partner outreach, attribution, conversion, r
 <tr>
 <td width="50%" valign="top">
 
-### Fortune VPN Platform
+### [Fortune VPN Platform](https://github.com/downmeansoff/distributed-relay-platform)
 
 A production multi-platform product with one Go control plane, billing, entitlements, telemetry, mobile clients, and a distributed VLESS/Xray network.
 
@@ -117,7 +136,7 @@ A production multi-platform product with one Go control plane, billing, entitlem
 - Health-aware routing and egress verification
 - Staging, feature flags, smoke tests, rollback
 
-`Go` `PostgreSQL` `Docker` `Kotlin` `Swift` `Xray`
+`Go` `PostgreSQL` `Docker` `GitHub Actions` `Bash` `Kotlin` `Swift` `Xray`
 
 </td>
 <td width="50%" valign="top">
@@ -193,12 +212,13 @@ I use coding agents as an engineering force multiplier, not as an uncontrolled r
 - Production-grade agentic workflows and evaluation
 - AI automation for operational business processes
 - LLM integrations with APIs, databases, and internal tools
-- Reliable backend systems, observability, and cost-efficient AgentOps
+- Platform engineering, CI/CD, observability, service reliability, and incident response
+- Cost-efficient AgentOps and controlled production delivery
 - Expanding practical knowledge of RAG, embeddings, vector search, MCP, and LangGraph
 
 <div align="center">
 
-### Open to AI Engineer / Agentic Systems Engineer opportunities
+### Open to AI Engineer / Agentic Systems / DevOps & Platform opportunities
 
 [![Telegram](https://img.shields.io/badge/Let's_talk_on_Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/oldkindmvn)
 [![Email](https://img.shields.io/badge/Contact_by_email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:fortune.tavern@gmail.com)
