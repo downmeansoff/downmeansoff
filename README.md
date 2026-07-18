@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=210&color=0:0F172A,50:1D4ED8,100:7C3AED&text=Gleb%20Lutfullin&fontColor=FFFFFF&fontSize=44&fontAlignY=35&desc=AI%20Engineer%20%E2%80%A2%20Agentic%20Systems%20%E2%80%A2%20AI%20Business%20Automation&descAlignY=56&descSize=18&animation=fadeIn" alt="Gleb Lutfullin — AI Engineer" />
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=210&color=0:0F172A,50:1D4ED8,100:7C3AED&text=Gleb%20Lutfullin&fontColor=FFFFFF&fontSize=44&fontAlignY=35&desc=AI%20Engineer%20%E2%80%A2%20Agentic%20Systems%20%E2%80%A2%20Platform%20Engineering&descAlignY=56&descSize=18&animation=fadeIn" alt="Gleb Lutfullin — AI Engineer and Platform Engineer" />
 
 [![Telegram](https://img.shields.io/badge/Telegram-@oldkindmvn-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/oldkindmvn)
 [![Email](https://img.shields.io/badge/Email-fortune.tavern%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:fortune.tavern@gmail.com)
@@ -10,9 +10,9 @@
 <br/>
 
 ![Users](https://img.shields.io/badge/Production_users-1000%2B-22C55E?style=flat-square)
-![Nodes](https://img.shields.io/badge/Distributed_nodes-7-3B82F6?style=flat-square)
+![Nodes](https://img.shields.io/badge/Infrastructure_nodes-7-3B82F6?style=flat-square)
+![Channels](https://img.shields.io/badge/Client_channels-5-0EA5E9?style=flat-square)
 ![Agents](https://img.shields.io/badge/Specialized_AI_agents-7-8B5CF6?style=flat-square)
-![Availability](https://img.shields.io/badge/Service_availability-99%25%2B-14B8A6?style=flat-square)
 ![CRM](https://img.shields.io/badge/CRM_metrics-9-F59E0B?style=flat-square)
 
 </div>
@@ -23,8 +23,8 @@ I am an **AI Engineer / Product Engineer at Fortune Tavern Ltd (UK)** building a
 
 My focus is not adding a chatbot to an existing process. I turn business operations into reliable software systems with explicit states, tools, data contracts, validation, approval gates, observability, testing, and recovery paths.
 
-- Built and operate a multi-platform service used by **1,000+ users**
-- Designed a distributed network of **7 production nodes** with health-aware routing
+- Built and operate a multi-platform service used by **1,000+ users** across **7 infrastructure nodes** and **5 client channels**
+- Designed a **Go control plane** for authentication, devices, entitlements, usage policy, transport sessions, telemetry, and guarded node orchestration
 - Built a marketing workflow with **7 specialized AI agents**
 - Developed an internal CRM with **8 pipeline stages** and **9 automatically calculated business KPIs**
 - Introduced an AgentOps workflow for scoped implementation, review, testing, and controlled production delivery
@@ -50,7 +50,7 @@ English: **B2+ · Upper-Intermediate**
 ![Temporal](https://img.shields.io/badge/Temporal-141414?style=for-the-badge&logo=temporal&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
 
-`Agentic workflows` `Multi-agent systems` `Structured outputs` `JSON Schema` `Tool calling` `Human-in-the-loop` `LLM evaluation` `Safety guardrails` `Retries & fallbacks` `Prompt engineering` `AgentOps`
+`OpenAI Responses API` `OpenAI Agents SDK` `Claude Agent SDK` `Agentic workflows` `Multi-agent systems` `Structured outputs` `JSON Schema` `Tool calling` `Human-in-the-loop` `LLM evaluation` `Safety guardrails` `Retries & fallbacks` `Prompt engineering` `AgentOps`
 
 ## Backend & Data
 
@@ -58,7 +58,7 @@ English: **B2+ · Upper-Intermediate**
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 
-`REST APIs` `SQL` `PostgreSQL` `SQLAlchemy` `Alembic` `Prisma` `Webhooks` `Billing` `Entitlements` `Idempotency`
+`REST APIs` `SQL` `PostgreSQL` `SQLAlchemy` `Alembic` `Prisma` `Webhooks` `Billing` `Entitlements` `Device lifecycle` `Usage accounting` `Idempotency`
 
 ## DevOps & Platform Engineering
 
@@ -71,17 +71,17 @@ English: **B2+ · Upper-Intermediate**
 
 I design and operate infrastructure as part of the product lifecycle rather than treating deployment as a final hand-off.
 
-- Operate **7 distributed production nodes** serving **1,000+ users** with **99%+ availability**
-- Built health-aware routing, automated health checks, egress verification, node exclusion, and recovery paths
+- Operate **7 distributed production nodes** serving **1,000+ users** across web, Android, iOS, Telegram, and external clients
+- Built health-aware routing, automated health checks, egress verification, unhealthy-node exclusion, fallback, and recovery paths
 - Designed GitHub Actions pipelines covering linting, tests, staging validation, manual production approval, and controlled rollout
 - Use Docker and Docker Compose for reproducible environments and Linux-based service operation
 - Automate recurring operational tasks and integrations with **Bash, cron, and n8n**
-- Implement monitoring and operational visibility with Prometheus, Sentry, custom telemetry agents, audit logs, and incident runbooks
-- Apply staging, feature flags, smoke tests, rollback procedures, and human-controlled production changes
+- Implement monitoring and operational visibility with Prometheus, Sentry, custom telemetry agents, structured logs, audit events, and incident runbooks
+- Apply staging, feature flags, smoke evidence, role-separated access, rolling deployment, rollback, and human-controlled production changes
 
 `Docker` `Docker Compose` `Linux` `GitHub Actions` `CI/CD` `Bash` `cron` `n8n` `Prometheus` `Sentry` `Health checks` `Rolling deployment` `Smoke tests` `Rollback` `Incident response` `VLESS/Xray`
 
-[View the sanitized DevOps and distributed-platform reference →](https://github.com/downmeansoff/distributed-relay-platform)
+[View the sanitized distributed-platform architecture reference →](https://github.com/downmeansoff/distributed-relay-platform)
 
 ---
 
@@ -96,10 +96,10 @@ I design and operate infrastructure as part of the product lifecycle rather than
 A multi-agent workflow that converts trend and product signals into content ideas, scripts, QA decisions, approval tasks, publishing actions, metrics, and new hypotheses.
 
 **Engineering highlights**
-- 7 specialized agents
+- 7 specialized agents across 5 workflow stages
 - OpenAI Responses API with strict structured outputs
 - Pydantic validation and deterministic fallback
-- 3-level risk routing with human approval
+- Risk routing, audit logs, and human approval
 - Temporal orchestration, PostgreSQL, Redis, CI
 
 `Python` `FastAPI` `OpenAI API` `Temporal` `Pydantic`
@@ -125,18 +125,21 @@ Internal acquisition CRM connecting partner outreach, attribution, conversion, r
 <tr>
 <td width="50%" valign="top">
 
-### [Fortune VPN Platform](https://github.com/downmeansoff/distributed-relay-platform)
+### [Fortune VPN — Network Platform & Go Control Plane](https://github.com/downmeansoff/distributed-relay-platform)
 
-A production multi-platform product with one Go control plane, billing, entitlements, telemetry, mobile clients, and a distributed VLESS/Xray network.
+A production multi-platform network product serving **1,000+ users** through web, Android, iOS, Telegram, and external clients. The private production system combines a Go control plane, PostgreSQL, account-level entitlements, device lifecycle, usage enforcement, telemetry, and guarded orchestration of distributed VLESS/Xray infrastructure.
 
-**Production scope**
-- 1,000+ users
-- 7 infrastructure nodes
-- Web, Android, iOS, Telegram, external clients
-- Health-aware routing and egress verification
-- Staging, feature flags, smoke tests, rollback
+**Engineering scope**
+- Authentication, devices, entitlements, billing, and rewarded-access flows
+- Transport policy, session allocation, rotation, and egress verification
+- Server-side usage accounting and quota enforcement
+- Health-aware routing, fallback, and unhealthy-node exclusion
+- Versioned backend/client contracts with recovery semantics
+- Staging, feature flags, smoke evidence, audit, rolling rollout, and rollback
 
-`Go` `PostgreSQL` `Docker` `GitHub Actions` `Bash` `Kotlin` `Swift` `Xray`
+> The linked repository is a sanitized architecture reference. Production business logic and infrastructure remain private; the public version uses a minimal Python API to demonstrate deployment, monitoring, and relay orchestration safely.
+
+`Go` `PostgreSQL` `Docker` `GitHub Actions` `Bash` `Kotlin` `Swift` `Xray` `Nginx` `Prometheus`
 
 </td>
 <td width="50%" valign="top">
