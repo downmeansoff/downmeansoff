@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=205&color=0:0F172A,50:1D4ED8,100:7C3AED&text=Gleb%20Lutfullin&fontColor=FFFFFF&fontSize=44&fontAlignY=35&desc=AI%20Engineer%20%E2%80%A2%20Agentic%20Systems%20%E2%80%A2%20DevOps%20%26%20Platform&descAlignY=56&descSize=18&animation=fadeIn" alt="Gleb Lutfullin — AI Engineer, Agentic Systems, DevOps and Platform Engineering" />
+<img width="100%" src="./assets/header.svg" alt="Gleb Lutfullin — AI Engineer, Agentic Systems, DevOps and Platform Engineering" />
 
 [![Telegram](https://img.shields.io/badge/Telegram-@oldkindmvn-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/oldkindmvn)
 [![Email](https://img.shields.io/badge/Email-fortune.tavern%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:fortune.tavern@gmail.com)
