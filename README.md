@@ -5,6 +5,7 @@
 [![Telegram](https://img.shields.io/badge/Telegram-@oldkindmvn-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/oldkindmvn)
 [![Email](https://img.shields.io/badge/Email-gleblutfullina%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:gleblutfullina@gmail.com)
 [![Portfolio](https://img.shields.io/badge/Engineering_Case_Studies-111827?style=for-the-badge&logo=readthedocs&logoColor=white)](CASE_STUDIES.md)
+[![CV](https://img.shields.io/badge/View_AI_Engineer_CV-2563EB?style=for-the-badge&logo=readme&logoColor=white)](CV.md)
 
 <br/>
 
