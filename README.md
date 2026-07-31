@@ -1,201 +1,123 @@
 <div align="center">
 
-<img width="100%" src="./assets/header.svg" alt="Gleb Lutfullin — AI Engineer, Agentic Systems, DevOps and Platform Engineering" />
+<img width="100%" src="./assets/header.svg" alt="Gleb Lutfullin — Agentic LLM Engineer, RAG and Production AI Systems" />
 
 [![Telegram](https://img.shields.io/badge/Telegram-@oldkindmvn-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/oldkindmvn)
 [![Email](https://img.shields.io/badge/Email-gleblutfullina%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:gleblutfullina@gmail.com)
-[![Portfolio](https://img.shields.io/badge/Engineering_Case_Studies-111827?style=for-the-badge&logo=readthedocs&logoColor=white)](CASE_STUDIES.md)
-[![CV](https://img.shields.io/badge/View_AI_Engineer_CV-2563EB?style=for-the-badge&logo=readme&logoColor=white)](CV.md)
+[![Agentic Portfolio](https://img.shields.io/badge/Agentic_LLM_Portfolio-111827?style=for-the-badge&logo=readthedocs&logoColor=white)](AGENTIC_LLM_PORTFOLIO.md)
+[![Case Studies](https://img.shields.io/badge/Engineering_Case_Studies-374151?style=for-the-badge&logo=readthedocs&logoColor=white)](CASE_STUDIES.md)
+[![CV](https://img.shields.io/badge/View_CV-2563EB?style=for-the-badge&logo=readme&logoColor=white)](CV.md)
 
 <br/>
 
-![UK](https://img.shields.io/badge/Fortune_Tavern_Ltd-UK-2563EB?style=flat-square)
-![Users](https://img.shields.io/badge/Production_users-1000%2B-22C55E?style=flat-square)
-![Nodes](https://img.shields.io/badge/Infrastructure_nodes-7-3B82F6?style=flat-square)
-![Clients](https://img.shields.io/badge/Client_channels-5-0EA5E9?style=flat-square)
-![Agents](https://img.shields.io/badge/Specialized_AI_agents-7-8B5CF6?style=flat-square)
-![CRM](https://img.shields.io/badge/CRM_metrics-9-F59E0B?style=flat-square)
+![Agents](https://img.shields.io/badge/Production_AI_agents-7-8B5CF6?style=flat-square)
+![Cycle](https://img.shields.io/badge/Workflow_cycle-%E2%88%9280%25-22C55E?style=flat-square)
+![Cost](https://img.shields.io/badge/LLM_cost-%E2%88%9235%25-16A34A?style=flat-square)
+![RAG](https://img.shields.io/badge/RAG_eval_questions-54-F59E0B?style=flat-square)
+![Users](https://img.shields.io/badge/Production_users-1000%2B-0EA5E9?style=flat-square)
 
 </div>
 
 ## Profile
 
-I am an **AI Engineer / AI Automation Engineer at Fortune Tavern Ltd (UK)** focused on agentic systems, AI-assisted product development, backend architecture, DevOps, and production reliability.
+I am an **Agentic LLM Engineer / AI Product Engineer at Fortune Tavern Ltd (UK)** focused on production multi-agent systems, RAG, LLM reliability, backend architecture, and AI-native development.
 
-I work across the complete product lifecycle: requirements, system design, AI-agent orchestration, API contracts, mobile and backend delivery, CI/CD, observability, incident response, and controlled production rollout.
+I work across the full lifecycle: business discovery, architecture, tool and data contracts, implementation, evaluation, CI/CD, observability, staged rollout, customer feedback, and production support.
 
-### What I have delivered
+### Selected results
 
-- Led product and technical delivery for a multi-platform network service used by **1,000+ users** across **7 infrastructure nodes** and **5 client channels**: web, Android, iOS, Telegram, and external clients
-- Coordinated Android and iOS application delivery, shared backend contracts, release preparation, testing, and production issue resolution
-- Designed a **Go control plane** for authentication, device lifecycle, entitlements, billing flows, transport sessions, usage enforcement, telemetry, and guarded node orchestration
-- Designed a marketing operating system with **7 specialized AI agents** across research, generation, QA, approval, and feedback stages
-- Built an internal acquisition CRM with **8 pipeline stages** and **9 automatically calculated KPIs**
-- Established an **AgentOps** workflow for scoped implementation, code review, tests, security checks, staging validation, and human-controlled production delivery
+- Designed and operated a **7-agent production workflow** across research, generation, QA, approval, execution, and feedback
+- Reduced an end-to-end process from **~5 days to under 1 day** and average LLM cost per completed run by **~35%**
+- Built RAG evaluation over **54 labeled questions**, improving paraphrase **Recall@1 from 0.50 to 0.65** and **MRR from 0.62 to 0.72**
+- Delivered AI automations for external businesses across marketing, sales, analytics, and operations
+- Operated a distributed production platform for **1,000+ users**, **7 nodes**, and **5 client channels**
+- Built a controlled AgentOps workflow with isolated branches/worktrees, tests, security checks, staging evidence, and human production approval
 
-> I use coding agents as an engineering force multiplier. Architecture, acceptance criteria, production boundaries, release decisions, and operational risk remain human-controlled.
-
----
-
-## Flagship platform
-
-### [Fortune Network Platform — Multi-Platform Product, Go Control Plane & AgentOps](https://github.com/downmeansoff/distributed-relay-platform)
-
-A production multi-platform service combining mobile applications, shared backend contracts, PostgreSQL, distributed network infrastructure, CI/CD, observability, and AI-assisted engineering workflows.
-
-```text
-Web / Android / iOS / Telegram / External clients
-                         ↓
-                 Shared API contracts
-                         ↓
-                  Go control plane
-      Auth · Devices · Entitlements · Billing
-      Sessions · Usage · Telemetry · Support
-                         ↓
-                    PostgreSQL
-                         ↓
-             Distributed infrastructure
-                  7 production nodes
-```
-
-**My responsibility**
-
-- Product requirements, architecture, task decomposition, and acceptance criteria
-- Android and iOS delivery coordination
-- Backend contracts and data-model design
-- Infrastructure, monitoring, rollout, rollback, and incident readiness
-- Agent-assisted implementation, QA, security review, and documentation
-
-**Reliability controls**
-
-`Health-aware routing` `Unhealthy-node exclusion` `Egress verification` `Staging` `Feature flags` `Smoke tests` `Rolling deployment` `Rollback` `Audit logs` `Human approval`
-
-[Open the sanitized architecture reference →](https://github.com/downmeansoff/distributed-relay-platform)
+> Coding agents accelerate delivery. Architecture, permissions, acceptance criteria, production boundaries, and release decisions remain human-owned.
 
 ---
 
-## Selected engineering work
+## Featured agentic and RAG work
 
-<table>
-<tr>
-<td width="50%" valign="top">
+### [Agentic LLM & RAG Engineering Portfolio](AGENTIC_LLM_PORTFOLIO.md)
 
-### AI Marketing Operating System
+Detailed production-oriented portfolio covering:
 
-Multi-agent workflow that transforms trend and product signals into ideas, scripts, QA decisions, approval tasks, publishing actions, metrics, and new hypotheses.
+- multi-step agent orchestration and state transitions;
+- tool/function calling and structured Pydantic contracts;
+- context and memory boundaries;
+- retries, fallbacks, stop conditions, and degraded states;
+- evaluation, tracing, regression scenarios, and human review;
+- hybrid retrieval, reranking boundaries, Recall@k, and MRR;
+- self-hosted serving readiness and vLLM operational concepts.
 
-- 7 specialized agents across 5 stages
-- OpenAI Responses API and strict structured outputs
-- JSON Schema and Pydantic validation
-- Risk routing, audit logs, retries, and fallbacks
-- Human-in-the-loop approval and LLM evaluation
+### [VibeSpec — AI contract, safety, and observability layer](https://github.com/downmeansoff/vibespec)
 
-`OpenAI API` `OpenAI Agents SDK` `Claude Agent SDK` `Temporal` `PostgreSQL` `Redis`
+Public Python project for autonomous clients of a changing AI API:
 
-</td>
-<td width="50%" valign="top">
+- live model capability discovery and per-model JSON Schema;
+- local validation, cost and approval gates, and idempotency;
+- exact `Retry-After` handling with bounded attempts;
+- schema drift detection and OpenAPI consistency audits;
+- secret-safe traces, deterministic JSON envelopes, tests, and CI.
 
-### AI-Assisted CRM & Acquisition Automation
+### [Agentic RAG Reliability Reference](agentic-rag-reference/README.md)
 
-Internal CRM connecting partner outreach, attribution, conversion, revenue, payouts, and operational decisions.
+Compact public reference with:
 
-- 8 pipeline stages
-- 9 automatically calculated KPIs
-- Web and Telegram attribution
-- Tracking-code generation and unique-click counting
-- Conversion, revenue, payout, and net-revenue calculations
+- Pydantic chunk and search contracts;
+- TF-IDF and injected dense retrieval;
+- reciprocal-rank fusion for hybrid search;
+- optional reranker interface;
+- Recall@k, MRR, retrieval failure buckets, and deterministic tests.
 
-`Go` `PostgreSQL` `REST APIs` `Telegram` `Analytics`
+---
 
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
+## Production platform experience
 
-### LLM-Powered Telegram Product
+### [Distributed Secure Access Platform](https://github.com/downmeansoff/distributed-relay-platform)
 
-Production-oriented Telegram Mini App with adaptive prompts, safety filtering, bounded output, cached generation, authentication, payments, and telemetry.
+Sanitized architecture reference for a private production system used by **1,000+ users** across **7 nodes** and **5 client channels**.
 
-- Telegram Mini Apps and Telegram Stars
-- OpenRouter-based LLM generation
-- Fastify, Prisma, PostgreSQL, and Sentry
-- Russian and English prompt pipelines
-- Safety checks, fallback behavior, and cached partial generation
+**Relevant controls**
 
-`TypeScript` `Fastify` `OpenRouter` `Prisma` `React` `Sentry`
+`Health-aware routing` `Automatic node exclusion` `Versioned API contracts` `Staging` `Smoke tests` `Rolling deployment` `Rollback` `Prometheus` `Sentry` `Audit logs` `Incident response`
 
-</td>
-<td width="50%" valign="top">
-
-### Public Platform Architecture Reference
-
-A safe, runnable demonstration of deployment, monitoring, health checks, PostgreSQL, Docker topology, and guarded CI/CD without exposing private production logic or infrastructure.
-
-- Docker and Docker Compose
-- GitHub Actions CI/CD
-- Staging and manual production approval
-- Rolling deployment and health gates
-- Monitoring, structured logs, and recovery paths
-
-`Docker` `Linux` `GitHub Actions` `Prometheus` `Bash`
-
-</td>
-</tr>
-</table>
-
-[Read detailed engineering case studies →](CASE_STUDIES.md)
+This background shapes how I design LLM systems: agents need the same discipline around contracts, failure isolation, permissions, observability, rollout safety, and recovery as any other distributed component.
 
 ---
 
 ## Core stack
 
-### AI & Agentic Systems
+### Agentic LLM Systems
 
-`AI Agents` `Agentic Workflows` `Multi-Agent Systems` `OpenAI Responses API` `OpenAI Agents SDK` `Claude Agent SDK` `OpenRouter` `Tool Calling` `Structured Outputs` `JSON Schema` `Human-in-the-loop` `LLM Evaluation` `Prompt Engineering` `AgentOps`
+`Python` `FastAPI` `Pydantic` `OpenAI Responses API` `OpenAI Agents SDK` `Claude Agent SDK` `LangGraph` `Temporal` `MCP` `Tool Calling` `Structured Outputs` `JSON Schema` `Human-in-the-loop` `Context Management` `Bounded Retries` `Fallbacks` `Stop Conditions`
 
-### Backend & Data
+### RAG, Evaluation & LLMOps
 
-`Python` `FastAPI` `Go` `TypeScript` `PostgreSQL` `SQL` `Redis` `Pydantic` `Prisma` `REST APIs` `Webhooks` `Data Contracts` `Idempotency`
+`Chunking` `Embeddings` `Lexical Search` `Vector Search` `Hybrid Retrieval` `Reranking Patterns` `Recall@k` `MRR` `Golden Sets` `Regression Scenarios` `Tracing` `Error Taxonomy` `Prompt/Model Versioning` `Langfuse Familiarity`
 
-### DevOps, Infrastructure & Reliability
+### Backend, Data & Production
 
-`Docker` `Docker Compose` `Linux` `GitHub Actions` `CI/CD` `Railway` `Bash` `n8n` `Prometheus` `Sentry` `Health Checks` `Rolling Deployment` `Rollback` `Incident Response` `VLESS/Xray`
+`PostgreSQL` `Redis` `SQL` `REST APIs` `Webhooks` `Docker` `Linux` `GitHub Actions` `CI/CD` `Prometheus` `Sentry` `Health Checks` `Staged Rollout` `Rollback` `Incident Response`
 
----
+### AI-native Development
 
-## AgentOps workflow
-
-```text
-Business goal
-    ↓
-Architecture, scope & acceptance criteria
-    ↓
-Specialized coding agents in isolated branches
-    ↓
-Tests, QA, security review and documentation
-    ↓
-CI/CD, staging validation and smoke evidence
-    ↓
-Human-controlled production decision
-```
-
-Agents help with repository analysis, implementation, tests, regression checks, documentation, and security review. I retain ownership of architecture, risk boundaries, production permissions, and release decisions.
+`Claude Code` `Codex` `Cursor` `OpenCode` `Git Worktrees` `AgentOps` `Automated Tests` `Security Review` `Documentation`
 
 ---
 
 ## Education
 
-**Samara National Research University (Samara University)**  
-5th-year Specialist student — **Information Security of Automated Systems**  
-Specialty: **10.05.03 · Информационная безопасность автоматизированных систем**  
-Expected graduation: **2028**  
-English: **B2+ · Upper-Intermediate**
+**Samara National Research University**  
+5th-year Specialist student — **Information Security of Automated Systems (10.05.03)**  
+Expected graduation: **February 2028** · English: **B2+**
 
 ---
 
 <div align="center">
 
-### Open to AI Engineer · AI Automation Engineer · Agentic Systems · DevOps / Platform opportunities
+### Open to Agentic LLM Engineer · AI Engineer · RAG / LLMOps opportunities
 
 [![Telegram](https://img.shields.io/badge/Let's_talk_on_Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/oldkindmvn)
 [![Email](https://img.shields.io/badge/Contact_by_email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:gleblutfullina@gmail.com)
