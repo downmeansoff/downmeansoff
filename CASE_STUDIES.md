@@ -1,230 +1,159 @@
 # Engineering Case Studies
 
-These case studies describe selected systems I designed, coordinated, and developed. Production secrets, customer data, private domains, infrastructure identifiers, credentials, and proprietary business logic are intentionally omitted.
+Selected systems I designed, coordinated, and developed. Production secrets, customer data, private domains, credentials, and proprietary business logic are intentionally omitted.
 
-## 1. Fortune Network Platform — multi-platform product, Go control plane and AgentOps
+## 1. Production multi-agent workflow
 
-### Business problem
+### Problem
 
-A consumer network product had to support Android, iOS, web, Telegram, and external clients while sharing one source of truth for authentication, devices, subscriptions, access policy, usage, telemetry, and infrastructure operations.
+Research, preparation, QA, approval, execution, and feedback required repeated manual handoffs. A single long prompt was expensive to retry, hard to observe, and unsafe to connect directly to external actions.
 
-The platform also needed to operate across unreliable and sometimes restricted network paths without duplicating business logic in every client or allowing infrastructure failures to cascade across the product.
+### System
 
-### Scale and product surface
-
-- **1,000+ users**
-- **7 production infrastructure nodes**
-- **5 client channels**: web, Android, iOS, Telegram, and external clients
-- distributed VLESS/Xray data plane
-- PostgreSQL-backed product and operational state
-- shared backend contracts across all client applications
+Designed a workflow with **7 specialized agents** across explicit state transitions. The system used OpenAI Responses/Agents SDK, Claude Agent SDK, Pydantic contracts, PostgreSQL, Redis, Temporal orchestration, and controlled tool access.
 
 ### My responsibility
 
-I led product and technical delivery across:
+- agent and workflow architecture;
+- tool/function schemas and permissions;
+- JSON Schema and Pydantic structured outputs;
+- state, context, and memory boundaries;
+- bounded retries, fallbacks, timeouts, and stop conditions;
+- risk routing and Human-in-the-Loop;
+- cost/failure tracing, regression scenarios, monitoring, and production support;
+- customer discovery, demos, feedback, and iteration planning.
 
-- product requirements, architecture, task decomposition, and acceptance criteria;
-- Android and iOS application delivery coordination;
-- shared API contracts and PostgreSQL data models;
-- authentication, device lifecycle, entitlements, billing flows, sessions, and usage policy;
-- distributed infrastructure, health-aware routing, observability, and incident readiness;
-- CI/CD, staging validation, rolling rollout, rollback, and production verification;
-- an AI-assisted AgentOps workflow for implementation, QA, security review, and documentation.
+### Reliability controls
 
-My role combined product ownership, architecture, engineering coordination, production validation, and operational reliability.
+- each step persists validated state;
+- failed steps can be retried without replaying the full workflow;
+- external writes are isolated behind policy checks and idempotency;
+- model choice and context size are routed by complexity and risk;
+- unsafe or ambiguous output follows deterministic refusal or approval paths;
+- prompt/model changes are checked against repeatable scenarios before rollout.
 
-### Product architecture
+### Result
 
-```text
-Web / Android / iOS / Telegram / External clients
-                         ↓
-                 Shared API contracts
-                         ↓
-                  Go control plane
-      Auth · Devices · Entitlements · Billing
-      Sessions · Usage · Telemetry · Support
-                         ↓
-                    PostgreSQL
-                         ↓
-             Distributed network layer
-                  7 production nodes
-```
+- **~5 days → under 1 day** end-to-end cycle;
+- **~35% lower** average LLM cost per completed run;
+- five manual handoffs replaced by observable state transitions;
+- failures attributable to a specific step, model, prompt version, or tool call.
 
-The private production control plane coordinates:
+---
 
-- guest, email OTP, Apple, and Google authentication;
-- account and device lifecycle;
-- account-level entitlements and client capabilities;
-- billing and rewarded-access flows;
-- region and transport policy publication;
-- session allocation, rotation, and revocation;
-- server-side usage accounting and quota enforcement;
-- telemetry, support metadata, metrics, and audit events;
-- guarded orchestration of distributed relay nodes.
+## 2. Supply-Chain RAG and retrieval evaluation
 
-### Mobile delivery
+### Scope
 
-Android and iOS clients use versioned backend contracts instead of reimplementing product policy locally. The applications receive server-owned state for authentication, devices, entitlements, available regions, transport policy, session recovery, and error handling.
+Built a Python/FastAPI RAG service with document preparation, chunking, embeddings, cosine vector retrieval, a `/query` endpoint, and offline evaluation over **54 labeled questions**.
 
-I coordinated requirements, client-server integration, testing, release preparation, and production issue resolution across the mobile delivery lifecycle.
+### Evaluation approach
 
-### Key engineering decisions
+- compared TF-IDF lexical retrieval with neural embeddings;
+- measured Recall@k and MRR;
+- separated paraphrase, keyword, and factual query classes;
+- reviewed context sufficiency and retrieval edge cases;
+- tracked the first relevant chunk rather than only whether one appeared anywhere.
 
-#### One control plane for every client
+### Result
 
-Product state and access rules remain server-owned. This avoids separate implementations of authentication, entitlements, usage limits, and transport behavior across five client channels.
+- paraphrase Recall@1: **0.50 → 0.65**;
+- MRR: **0.62 → 0.72**;
+- keyword queries showed that dense retrieval was not universally better;
+- recommended hybrid lexical+dense retrieval and a reranking stage.
 
-#### Control-plane and data-plane separation
+### Public reference
 
-The Go backend owns product state and orchestration decisions. Infrastructure nodes execute restricted transport operations. This limits the blast radius of node-level changes and separates customer-facing logic from network runtime.
+[`agentic-rag-reference`](agentic-rag-reference/README.md) demonstrates normalized Pydantic contracts, lexical+dense reciprocal-rank fusion, an optional reranker boundary, Recall@k/MRR, failure buckets, and deterministic tests.
 
-#### Server-side enforcement
+---
 
-Access, device limits, traffic quotas, and capabilities are derived from account entitlements and server-side usage data rather than trusting local client state.
+## 3. VibeSpec — public AI reliability project
 
-#### Health-aware routing and recovery
+[VibeSpec](https://github.com/downmeansoff/vibespec) is a Python contract, safety, and observability layer for autonomous clients of a changing AI generation API.
 
-Node health, routing decisions, fallback paths, and egress verification are explicit platform behavior. Unhealthy nodes can be excluded automatically, while clients receive stable recovery signals.
+### Engineering controls
 
-#### Versioned contracts
+- live capability discovery with no hard-coded model list;
+- per-model JSON Schema compilation and local validation;
+- free server-side cost estimate before paid execution;
+- safety check, explicit approval, cost ceiling, and idempotency;
+- exact `Retry-After` handling for `429` and `503` with bounded attempts;
+- webhook HMAC verification;
+- capability snapshots and schema-drift reports;
+- secret-safe JSONL traces and offline HTML reports;
+- stable JSON envelopes for Codex, Claude Code, CI, or another orchestrator;
+- tests and CI on Python 3.11–3.13.
 
-Clients and backend use versioned status, error, and recovery contracts. Runtime failures are easier to reproduce, diagnose, and handle consistently across platforms.
+### Why it matters
 
-### Reliability and operational controls
+Agent systems depend on changing model and API contracts. VibeSpec makes drift, retries, paid actions, and failures explicit and machine-readable rather than hidden inside prompts.
 
-- component-level health checks and degraded-state reporting;
+---
+
+## 4. AI automations for external businesses
+
+### Work
+
+Delivered AI automation across marketing, sales, analytics, and operations. Work started with process discovery and identifying the actual bottleneck, then moved through solution selection, architecture, integrations, pilot rollout, demos, and user feedback.
+
+### Typical components
+
+- Python/FastAPI and n8n workflows;
+- CRM and external API integrations;
+- segmentation and structured data preparation;
+- personalized messaging and content workflows;
+- scheduling, deduplication, delivery status, retries, and audit logs;
+- evaluation of hosted models and cost/quality trade-offs;
+- user training and rollout support.
+
+### Business approach
+
+Measured the effect through cycle time, manual hours, repeated work, error rate, throughput, and LLM/infrastructure cost rather than treating model output as the final metric.
+
+---
+
+## 5. Distributed Secure Access Platform
+
+### Scale
+
+- **1,000+ users**;
+- **7 production nodes**;
+- **5 client channels**: web, Android, iOS, Telegram, and external clients.
+
+### My responsibility
+
+Product requirements, backend architecture, API contracts, PostgreSQL data models, mobile delivery coordination, infrastructure, monitoring, rollout, rollback, and production incident readiness.
+
+### Reliability decisions
+
+- server-owned product state and versioned contracts;
+- control-plane and data-plane separation;
 - health-aware routing and automatic unhealthy-node exclusion;
-- egress verification before a session is treated as valid;
-- staging and feature-flagged rollout;
-- smoke tests and runtime evidence collection;
-- rolling deployment with health gates;
-- structured logs, telemetry, metrics, and audit events;
-- role-separated operational access;
-- rollback and recovery procedures;
-- human approval for high-impact production mutations;
-- incident and support runbooks.
+- staging, smoke evidence, rolling deployment, and rollback;
+- structured logs, telemetry, Prometheus, Sentry, and incident runbooks;
+- role-separated access and human approval for high-impact actions.
 
-### AgentOps workflow
+### Public reference
+
+[`distributed-relay-platform`](https://github.com/downmeansoff/distributed-relay-platform) is a sanitized runnable architecture reference. Production code, customer data, and private infrastructure remain private.
+
+---
+
+## AI-native development workflow
 
 ```text
-Product requirement
+Business goal and acceptance criteria
         ↓
-Architecture, scope and acceptance criteria
+Architecture and implementation plan
         ↓
-Specialized coding agents in isolated branches
+Coding agents in isolated branches/worktrees
         ↓
-QA, regression checks, tests and security review
+Tests, QA, regression and security checks
         ↓
-CI/CD, staging validation and smoke evidence
+CI/CD, staging and smoke evidence
         ↓
 Human-controlled production decision
 ```
 
-Specialized agents assist with repository analysis, scoped implementation, test generation, regression checks, documentation, and security review. Architecture, production boundaries, permissions, risk decisions, and releases remain human-controlled.
-
-### Business value
-
-- avoided duplicating core auth, entitlement, usage, and transport logic across five client channels;
-- enabled one backend and data model to support mobile, web, Telegram, and external products;
-- supported growth to 1,000+ users while keeping product policy and network operations centrally controlled;
-- reduced operational risk by separating staging, production, roles, and high-impact actions;
-- shortened incident diagnosis through stable contracts, health data, telemetry, and evidence collection;
-- allowed infrastructure nodes to be changed or removed without redesigning every client;
-- accelerated engineering delivery through controlled use of coding agents without giving them unrestricted production access.
-
-### Public portfolio boundary
-
-The public [`distributed-relay-platform`](https://github.com/downmeansoff/distributed-relay-platform) repository is a sanitized architecture reference. It demonstrates Docker topology, a minimal API, PostgreSQL, monitoring, health checks, CI/CD, staging, and rolling deployment.
-
-The production Go backend, billing integrations, mobile source code, customer data, private infrastructure, credentials, and proprietary business logic remain private.
-
----
-
-## 2. Multi-agent marketing operating system
-
-### Business problem
-
-Research, creative production, review, publishing, and performance analysis required repeated manual work and produced inconsistent outputs.
-
-### System
-
-Designed a multi-step workflow with specialized agents for trend scanning, audience analysis, idea generation, creative selection, script generation, quality assurance, approval, and learning from metrics.
-
-The system uses **7 specialized agents** across **5 workflow stages** and models each handoff as an explicit state transition rather than an informal prompt chain.
-
-### Reliability controls
-
-- OpenAI Responses API with strict JSON Schema outputs;
-- Pydantic validation and application-side business-rule checks;
-- retry policy and deterministic fallback behavior;
-- risk classification and automatic rejection of unsafe output;
-- human approval for medium-risk content;
-- LLM call tracing and audit logs;
-- end-to-end pipeline tests and CI.
-
-### Business value
-
-Reduced repetitive work across research, drafting, QA, approval, and reporting; made the process reproducible; and created a foundation for scaling content operations without scaling manual coordination at the same rate.
-
----
-
-## 3. AI-assisted CRM and acquisition automation
-
-### Business problem
-
-Partner outreach, campaign attribution, conversion analysis, payouts, and follow-ups were fragmented across manual notes and separate tools.
-
-### System
-
-Built an internal CRM that models the acquisition funnel from prospect to active partner. It tracks platform, audience, stage, owner, contact history, tracking codes, web and Telegram links, clicks, registrations, paid users, revenue, payouts, net revenue, and conversion.
-
-### Automation and metrics
-
-- **8 pipeline stages**;
-- **9 automatically calculated KPIs**;
-- automatic unique tracking-code generation;
-- web and Telegram funnel attribution;
-- unique-click counting and conversion calculation;
-- revenue, payout, and net-revenue aggregation;
-- search, filtering, stage management, and CSV export;
-- agent-assisted feature development, audits, regression analysis, and maintenance.
-
-### Business value
-
-Created one source of truth for acquisition operations, reduced manual reconciliation, made partner performance visible, and shortened the path from campaign activity to operational decisions.
-
----
-
-## 4. LLM-powered Telegram product
-
-### Business problem
-
-The product needed personalized generated responses while preserving output quality, safety, response bounds, payments, and operational reliability.
-
-### System
-
-Built an LLM integration with adaptive Russian and English prompts, user-question anchoring, controlled styles, pre-generation safety checks, cached partial outputs, database persistence, Telegram authentication, and payment flows.
-
-The product combines a TypeScript/Fastify backend, PostgreSQL, Prisma, OpenRouter, Telegram Mini Apps, Telegram Stars, React, Railway, and Sentry.
-
-### Engineering controls
-
-- bounded model outputs;
-- safety checks and fallback behavior;
-- idempotent payment processing;
-- cached partial generation;
-- structured persistence and auditability;
-- server-side access control;
-- production logs and Sentry-based operational visibility.
-
-### Business value
-
-Converted an LLM capability into a complete product workflow rather than a standalone model call, while improving response consistency, reducing repeated generation, and supporting production operations.
-
----
-
-## How I work with AI agents
-
-I use coding agents as an engineering force multiplier for repository analysis, implementation, tests, documentation, regression checks, and security reviews.
-
-I define the architecture, scope, acceptance criteria, safety constraints, data contracts, production permissions, and release boundaries. Agent output is verified through code review, tests, CI, staging, smoke checks, logs, and operational validation before production delivery.
+Daily tools include Claude Code, Codex, Cursor, OpenCode, MCP servers, Git worktrees, and GitHub Actions. Agents assist with repository analysis, implementation, tests, documentation, regression checks, and review. Architecture, permissions, production boundaries, and release decisions remain human-owned.
