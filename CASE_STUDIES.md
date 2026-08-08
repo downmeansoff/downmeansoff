@@ -117,7 +117,7 @@ Measured the effect through cycle time, manual hours, repeated work, error rate,
 
 ### Scale
 
-- **1,000+ users**;
+- **3,000+ users**;
 - **7 production nodes**;
 - **5 client channels**: web, Android, iOS, Telegram, and external clients.
 
@@ -147,7 +147,6 @@ Business goal and acceptance criteria
         ↓
 Architecture and implementation plan
         ↓
-Coding agents in isolated branches/worktrees
         ↓
 Tests, QA, regression and security checks
         ↓
