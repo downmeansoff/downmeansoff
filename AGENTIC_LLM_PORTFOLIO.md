@@ -93,26 +93,7 @@ Built a Python/FastAPI RAG service with document preparation, chunking, embeddin
 
 ---
 
-## Case 3 — VibeSpec: public contract, safety, and observability layer
-
-[VibeSpec](https://github.com/downmeansoff/vibespec) is a public Python project for autonomous clients of a changing AI generation API.
-
-It demonstrates:
-
-- live capability discovery and model-specific JSON Schema;
-- local validation before network writes;
-- safety checks, exact cost estimation, approval gates, and idempotency;
-- bounded retries with exact `Retry-After` handling;
-- schema drift detection;
-- secret-safe traces and offline HTML reports;
-- stable JSON envelopes for Codex, Claude Code, CI, or another orchestrator;
-- tests and CI across Python 3.11–3.13.
-
-This project is directly relevant to agent reliability: model and API contracts change, so the client needs validation, drift detection, traceability, and deterministic refusal paths.
-
----
-
-## Case 4 — Distributed production platform
+## Case 3 — Distributed production platform
 
 [Distributed Secure Access Platform](https://github.com/downmeansoff/distributed-relay-platform) is a sanitized public architecture reference for a private production system serving 3,000+ users across 7 nodes and 5 client channels.
 
@@ -157,7 +138,6 @@ Requirement and acceptance criteria
         ↓
 Repository analysis and implementation plan
         ↓
-        ↓
 Tests, lint/build, security and regression checks
         ↓
 Staging and smoke evidence
@@ -170,7 +150,6 @@ Agents accelerate implementation and review, but architecture, permissions, acce
 ## Links
 
 - [Profile and selected projects](https://github.com/downmeansoff)
-- [VibeSpec](https://github.com/downmeansoff/vibespec)
 - [Distributed platform architecture](https://github.com/downmeansoff/distributed-relay-platform)
 - [General engineering case studies](CASE_STUDIES.md)
 - [CV](CV.md)
