@@ -1,8 +1,84 @@
 # Engineering Case Studies
 
-Selected systems I designed, coordinated, and developed. Production secrets, customer data, private domains, credentials, and proprietary business logic are intentionally omitted.
+Systems I designed and built at Fortune Tavern Ltd. Production secrets, customer data, private domains, credentials, and proprietary business logic are intentionally omitted.
 
-## 1. Production multi-agent workflow
+## 1. Multi-agent document processing for a logistics client
+
+### Problem
+
+A 14-person unit hand-processed vehicle registration papers and inbound email: reading documents, keying fields into internal systems, deciding where each case should go. Volume was growing, accuracy depended on who was on shift, and the backlog was visible to customers.
+
+### System
+
+A multi-agent pipeline for extraction, validation and routing. Documents and mail enter a common intake, specialised agents extract fields, a validation stage checks them against business rules and known formats, and a routing stage decides the destination or escalates.
+
+### My responsibility
+
+- pipeline and agent architecture, stage boundaries and handoff contracts;
+- extraction schemas and Pydantic/JSON Schema validation;
+- confidence thresholds and escalation rules for ambiguous documents;
+- human review path for anything the pipeline refuses to decide;
+- audit logs for every automated decision;
+- rollout alongside the existing manual process before switching over.
+
+### Result
+
+- the unit went from **14 people to 2**; the remaining 12 were reassigned to other work;
+- the two remaining operators handle exceptions and review, not routine keying;
+- every automated decision is traceable to a document, a stage and a model version.
+
+---
+
+## 2. Patient-facing scheduling agent for a private clinic
+
+### Problem
+
+A clinic needed booking, rescheduling, follow-up reminders and answers to routine questions without adding reception staff. The domain carries two hard constraints: patient data falls under Russian personal-data law (152-FZ), and an assistant that talks to patients all day can quietly become expensive.
+
+### System
+
+A conversational agent over the clinic's knowledge base and scheduling system: it books and moves appointments, sends follow-up reminders, and answers questions about services and procedures.
+
+### My responsibility
+
+- conversation and context design with a bounded token cost per dialogue;
+- 152-FZ handling: what is stored, what is passed to a model, what never leaves the perimeter;
+- knowledge-base retrieval behind the answers (see case 3);
+- refusal and handover paths for clinical questions the agent must not answer;
+- reminder scheduling with idempotency, so a retry never double-books or double-notifies.
+
+### Result
+
+- routine scheduling and repeat questions handled without a human in the loop;
+- per-conversation cost stays inside a defined ceiling instead of scaling with chattiness;
+- clinical and edge-case questions route to staff by design, not by accident.
+
+---
+
+## 3. Retrieval evaluation behind the clinic assistant
+
+### Scope
+
+A Python/FastAPI retrieval service with document preparation, chunking, embeddings, cosine vector retrieval, a `/query` endpoint, and offline evaluation over **54 labeled questions**.
+
+### Evaluation approach
+
+- compared TF-IDF lexical retrieval with neural embeddings;
+- measured Recall@k and MRR;
+- separated paraphrase, keyword, and factual query classes;
+- reviewed context sufficiency and retrieval edge cases;
+- tracked the first relevant chunk rather than only whether one appeared anywhere.
+
+### Result
+
+- paraphrase Recall@1: **0.50 → 0.65**;
+- MRR: **0.62 → 0.72**;
+- keyword queries showed that dense retrieval was not universally better;
+- recommended hybrid lexical+dense retrieval and a reranking stage.
+
+---
+
+## 4. Production multi-agent workflow
 
 ### Problem
 
@@ -10,7 +86,7 @@ Research, preparation, QA, approval, execution, and feedback required repeated m
 
 ### System
 
-Designed a workflow with **7 specialized agents** across explicit state transitions. The system used OpenAI Responses/Agents SDK, Claude Agent SDK, Pydantic contracts, PostgreSQL, Redis, Temporal orchestration, and controlled tool access.
+A workflow with **7 specialized agents** across explicit state transitions, using OpenAI Agents SDK, Claude Agent SDK, Pydantic contracts, PostgreSQL, Redis, Temporal orchestration, and controlled tool access.
 
 ### My responsibility
 
@@ -19,9 +95,8 @@ Designed a workflow with **7 specialized agents** across explicit state transiti
 - JSON Schema and Pydantic structured outputs;
 - state, context, and memory boundaries;
 - bounded retries, fallbacks, timeouts, and stop conditions;
-- risk routing and Human-in-the-Loop;
-- cost/failure tracing, regression scenarios, monitoring, and production support;
-- customer discovery, demos, feedback, and iteration planning.
+- risk routing and human-in-the-loop;
+- cost/failure tracing, regression scenarios, monitoring, and production support.
 
 ### Reliability controls
 
@@ -41,61 +116,9 @@ Designed a workflow with **7 specialized agents** across explicit state transiti
 
 ---
 
-## 2. Supply-Chain RAG and retrieval evaluation
+## 5. AI automations for external clients
 
-### Scope
-
-Built a Python/FastAPI RAG service with document preparation, chunking, embeddings, cosine vector retrieval, a `/query` endpoint, and offline evaluation over **54 labeled questions**.
-
-### Evaluation approach
-
-- compared TF-IDF lexical retrieval with neural embeddings;
-- measured Recall@k and MRR;
-- separated paraphrase, keyword, and factual query classes;
-- reviewed context sufficiency and retrieval edge cases;
-- tracked the first relevant chunk rather than only whether one appeared anywhere.
-
-### Result
-
-- paraphrase Recall@1: **0.50 → 0.65**;
-- MRR: **0.62 → 0.72**;
-- keyword queries showed that dense retrieval was not universally better;
-- recommended hybrid lexical+dense retrieval and a reranking stage.
-
-### Public reference
-
-[`agentic-rag-reference`](agentic-rag-reference/README.md) demonstrates normalized Pydantic contracts, lexical+dense reciprocal-rank fusion, an optional reranker boundary, Recall@k/MRR, failure buckets, and deterministic tests.
-
----
-
-## 3. VibeSpec — public AI reliability project
-
-[VibeSpec](https://github.com/downmeansoff/vibespec) is a Python contract, safety, and observability layer for autonomous clients of a changing AI generation API.
-
-### Engineering controls
-
-- live capability discovery with no hard-coded model list;
-- per-model JSON Schema compilation and local validation;
-- free server-side cost estimate before paid execution;
-- safety check, explicit approval, cost ceiling, and idempotency;
-- exact `Retry-After` handling for `429` and `503` with bounded attempts;
-- webhook HMAC verification;
-- capability snapshots and schema-drift reports;
-- secret-safe JSONL traces and offline HTML reports;
-- stable JSON envelopes for Codex, Claude Code, CI, or another orchestrator;
-- tests and CI on Python 3.11–3.13.
-
-### Why it matters
-
-Agent systems depend on changing model and API contracts. VibeSpec makes drift, retries, paid actions, and failures explicit and machine-readable rather than hidden inside prompts.
-
----
-
-## 4. AI automations for external businesses
-
-### Work
-
-Delivered AI automation across marketing, sales, analytics, and operations. Work started with process discovery and identifying the actual bottleneck, then moved through solution selection, architecture, integrations, pilot rollout, demos, and user feedback.
+Delivered across marketing, sales, analytics, and operations for Fortune Tavern's clients. Work started with process discovery and identifying the actual bottleneck, then moved through solution selection, architecture, integrations, pilot rollout, demos, and user feedback.
 
 ### Typical components
 
@@ -113,7 +136,7 @@ Measured the effect through cycle time, manual hours, repeated work, error rate,
 
 ---
 
-## 5. Distributed Secure Access Platform
+## 6. Distributed Secure Access Platform
 
 ### Scale
 
@@ -136,23 +159,4 @@ Product requirements, backend architecture, API contracts, PostgreSQL data model
 
 ### Public reference
 
-[`distributed-relay-platform`](https://github.com/downmeansoff/distributed-relay-platform) is a sanitized runnable architecture reference. Production code, customer data, and private infrastructure remain private.
-
----
-
-## AI-native development workflow
-
-```text
-Business goal and acceptance criteria
-        ↓
-Architecture and implementation plan
-        ↓
-        ↓
-Tests, QA, regression and security checks
-        ↓
-CI/CD, staging and smoke evidence
-        ↓
-Human-controlled production decision
-```
-
-Daily tools include Claude Code, Codex, Cursor, OpenCode, MCP servers, Git worktrees, and GitHub Actions. Agents assist with repository analysis, implementation, tests, documentation, regression checks, and review. Architecture, permissions, production boundaries, and release decisions remain human-owned.
+[`distributed-relay-platform`](https://github.com/downmeansoff/distributed-relay-platform) is a sanitized runnable architecture reference. Production code, customer data, and private infrastructure details are not included.
