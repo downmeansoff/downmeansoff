@@ -8,11 +8,11 @@ This portfolio focuses on production agentic systems, retrieval quality, LLM rel
 
 ## Production profile
 
-- **4 years working with Python**, including **3+ years of commercial engineering** and **1.5+ years focused on LLM systems**.
+- **3+ years of commercial engineering**, of which **1.5+ years building production LLM systems**.
 - Designed and operated a **7-agent production workflow** across research, generation, QA, approval, and feedback.
 - Reduced an end-to-end workflow from **~5 days to under 1 day** and lowered average LLM cost per completed run by **~35%**.
 - Built a RAG service with offline evaluation on **54 labeled questions**; improved paraphrase **Recall@1 from 0.50 to 0.65** and **MRR from 0.62 to 0.72** versus a TF-IDF baseline.
-- Operated a distributed production platform for **1,000+ users**, **7 nodes**, and **5 client channels**.
+- Operated a distributed production platform for **3,000+ users**, **7 nodes**, and **5 client channels**.
 - Delivered AI automations for external businesses across marketing, sales, analytics, and operations, from discovery through rollout and user feedback.
 
 ---
@@ -114,7 +114,7 @@ This project is directly relevant to agent reliability: model and API contracts 
 
 ## Case 4 — Distributed production platform
 
-[Distributed Secure Access Platform](https://github.com/downmeansoff/distributed-relay-platform) is a sanitized public architecture reference for a private production system serving 1,000+ users across 7 nodes and 5 client channels.
+[Distributed Secure Access Platform](https://github.com/downmeansoff/distributed-relay-platform) is a sanitized public architecture reference for a private production system serving 3,000+ users across 7 nodes and 5 client channels.
 
 Relevant engineering controls:
 
@@ -157,7 +157,6 @@ Requirement and acceptance criteria
         ↓
 Repository analysis and implementation plan
         ↓
-Coding agent in an isolated branch/worktree
         ↓
 Tests, lint/build, security and regression checks
         ↓
