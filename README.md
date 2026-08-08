@@ -14,7 +14,7 @@
 ![Cycle](https://img.shields.io/badge/Workflow_cycle-%E2%88%9280%25-22C55E?style=flat-square)
 ![Cost](https://img.shields.io/badge/LLM_cost-%E2%88%9235%25-16A34A?style=flat-square)
 ![RAG](https://img.shields.io/badge/RAG_eval_questions-54-F59E0B?style=flat-square)
-![Users](https://img.shields.io/badge/Production_users-1000%2B-0EA5E9?style=flat-square)
+![Users](https://img.shields.io/badge/Production_users-3000%2B-0EA5E9?style=flat-square)
 
 </div>
 
@@ -30,10 +30,8 @@ I work across the full lifecycle: business discovery, architecture, tool and dat
 - Reduced an end-to-end process from **~5 days to under 1 day** and average LLM cost per completed run by **~35%**
 - Built RAG evaluation over **54 labeled questions**, improving paraphrase **Recall@1 from 0.50 to 0.65** and **MRR from 0.62 to 0.72**
 - Delivered AI automations for external businesses across marketing, sales, analytics, and operations
-- Operated a distributed production platform for **1,000+ users**, **7 nodes**, and **5 client channels**
+- Operated a distributed production platform for **3,000+ users**, **7 nodes**, and **5 client channels**
 - Built a controlled AgentOps workflow with isolated branches/worktrees, tests, security checks, staging evidence, and human production approval
-
-> Coding agents accelerate delivery. Architecture, permissions, acceptance criteria, production boundaries, and release decisions remain human-owned.
 
 ---
 
@@ -51,16 +49,6 @@ Detailed production-oriented portfolio covering:
 - hybrid retrieval, reranking boundaries, Recall@k, and MRR;
 - self-hosted serving readiness and vLLM operational concepts.
 
-### [VibeSpec — AI contract, safety, and observability layer](https://github.com/downmeansoff/vibespec)
-
-Public Python project for autonomous clients of a changing AI API:
-
-- live model capability discovery and per-model JSON Schema;
-- local validation, cost and approval gates, and idempotency;
-- exact `Retry-After` handling with bounded attempts;
-- schema drift detection and OpenAPI consistency audits;
-- secret-safe traces, deterministic JSON envelopes, tests, and CI.
-
 ### [Agentic RAG Reliability Reference](agentic-rag-reference/README.md)
 
 Compact public reference with:
@@ -77,7 +65,7 @@ Compact public reference with:
 
 ### [Distributed Secure Access Platform](https://github.com/downmeansoff/distributed-relay-platform)
 
-Sanitized architecture reference for a private production system used by **1,000+ users** across **7 nodes** and **5 client channels**.
+Sanitized architecture reference for a private production system used by **3,000+ users** across **7 nodes** and **5 client channels**.
 
 **Relevant controls**
 
@@ -111,7 +99,7 @@ This background shapes how I design LLM systems: agents need the same discipline
 
 **Samara National Research University**  
 5th-year Specialist student — **Information Security of Automated Systems (10.05.03)**  
-Expected graduation: **February 2028** · English: **B2+**
+Expected graduation: **2027** · English: **C1**
 
 ---
 
