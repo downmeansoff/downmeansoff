@@ -1,83 +1,57 @@
 # Gleb Lutfullin
 
-**Agentic LLM Engineer · Multi-Agent Systems · RAG · LLM Backend**  
-Samara, Russia · Remote  
-[GitHub](https://github.com/downmeansoff) · [Agentic LLM Portfolio](AGENTIC_LLM_PORTFOLIO.md) · [Telegram](https://t.me/oldkindmvn) · [Email](mailto:gleblutfullina@gmail.com)
+**AI Engineer — Agentic Systems, RAG & LLM Backend**  
+Samara, Russia · Remote · +7 917 948-11-93 · gleblutfullina@gmail.com · [Telegram](https://t.me/oldkindmvn)  
+[GitHub](https://github.com/downmeansoff) · [Engineering Case Studies](CASE_STUDIES.md) · [Agentic LLM Portfolio](AGENTIC_LLM_PORTFOLIO.md)
 
-## Professional Summary
+## Summary
 
-Agentic LLM Engineer with **4 years of Python experience**, **3+ years of commercial engineering**, and **1.5+ years building production LLM systems**. Designs multi-step agent workflows, RAG services, AI automations, backend APIs, and production reliability controls with Python, FastAPI, Pydantic, PostgreSQL, Redis, Docker, and CI/CD.
+AI Engineer at a UK product company, building LLM systems that run in production: multi-agent document processing, customer-facing agents and RAG on Python and FastAPI. I took a logistics client's 14-person document operation down to 2 people, shipped a patient-facing clinic agent under Russian personal-data law (152-FZ), and cut LLM operating cost by ~35%. Retrieval is evaluated, not assumed: recall@1 0.50 to 0.65 on a labelled set of 54 questions. Before AI I spent a year in QA and a year in network infrastructure, which is why reliability, staged rollout and incident response are part of how I build. English C1.
 
-Delivered a 7-agent production workflow that reduced turnaround from approximately 5 days to under 1 day and LLM cost per completed run by approximately 35%. Built retrieval evaluation over 54 labeled questions, operated a distributed platform for 1,000+ users across 7 nodes, and delivered AI automations for external businesses. Experienced with tool calling, structured outputs, stateful orchestration, bounded retries, fallbacks, human approval, tracing, offline evaluation, monitoring, and incident response. English B2+.
+## Experience
 
-## Professional Experience
+### AI Engineer — Fortune Tavern Ltd
+**February 2025 — Present · United Kingdom · Remote, English-speaking team**
 
-### Fortune Tavern Ltd — AI Engineer / Product Engineer
-**Remote · United Kingdom · 2026–Present**
+- Automated a logistics client's document-handling operation — vehicle registration papers and inbound email — with a multi-agent extraction, validation and routing pipeline. The unit went from 14 people to 2; the remaining 12 were reassigned to other work.
+- Shipped a patient-facing scheduling agent for a private clinic: booking, rescheduling, follow-up reminders and Q&A over clinic knowledge, with 152-FZ personal-data handling and context design that kept per-conversation token cost bounded.
+- Built the retrieval layer behind it — chunking, embeddings and vector search with an offline evaluation set of 54 labelled questions: recall@1 0.50 → 0.65 and MRR 0.62 → 0.72 against a TF-IDF baseline.
+- Designed and shipped a 7-agent, 5-stage workflow (research → generation → QA → approval → analysis) that replaced 5 manual handoffs and cut the cycle from ~5 days to under 1 day.
+- Cut LLM operating cost by ~35% via cache-first execution, reusable intermediate results, bounded context and request-count controls, with tracing for cost and failure analysis.
+- Own agent reliability: human-in-the-loop approval on critical operations, structured outputs with JSON Schema, tool calling, task routing, bounded retries, fallback models and audit logs.
+- Operate a multi-platform product for 3,000+ users across 7 nodes and 5 client channels (web, Android, iOS, Telegram, external): Go control plane, health-aware routing, staging, smoke tests, rolling deploys and rollback.
 
-- Designed and operated a 7-agent workflow across research, generation, QA, approval, execution, and feedback; replaced 5 manual handoffs and cut end-to-end turnaround from approximately 5 days to under 1 day.
-- Defined agent roles, tool/function schemas, structured outputs, Pydantic contracts, state transitions, memory boundaries, stop conditions, risk routing, bounded retries, deterministic fallbacks, audit logs, and human approval.
-- Reduced average LLM cost per completed run by approximately 35% through cache-first execution, reusable intermediate results, narrow context, model routing, and retry limits; traced cost and failures by workflow step.
-- Built evaluation and regression scenarios for prompts, retrieval, structured outputs, and critical tool paths; used production feedback to improve quality, latency, and failure handling.
-- Delivered AI automations for external businesses across marketing, sales, analytics, and operations, taking work from process discovery and architecture through integrations, pilot rollout, demos, and user feedback.
-- Built an internal CRM with 8 pipeline stages and 9 automatically calculated KPIs linking attribution, conversion, revenue, payouts, and decisions.
-- Operated a distributed production platform for 1,000+ users across 7 nodes and 5 client channels with health-aware routing, staging, smoke tests, rolling deployment, monitoring, rollback, and incident response.
+### Manual QA Engineer — BFT-Holding
+**February 2024 — February 2025 · Samara, Russia · concurrent with Gazinformservice until May 2024**
 
-### Gastrohub — Python / LLM Developer
-**Remote · Kazakhstan · 2025**
+- Authored ~140 API and Postman test cases across 25+ endpoints covering 30 core user flows; standardised functional, regression, negative and integration testing across UI, REST API and PostgreSQL.
+- Logged 200+ defects across 12 releases, 18 critical and caught before production.
+- Introduced 3-layer UI → API → database verification with clearer reproduction evidence, cutting reopened defects by ~35% and regression setup from ~6 hours to ~1.5 hours.
 
-- Built a multi-agent AI automation platform for research, segmentation, campaign planning, content generation, QA, approval, and performance analysis.
-- Developed Python/FastAPI services and n8n workflows integrating OpenAI, Anthropic, OpenRouter, PostgreSQL, Redis, CRM segments, and external APIs.
-- Implemented structured outputs, Pydantic validation, scheduling, deduplication, delivery-status handling, retries, fallbacks, audit logs, Docker/CI/CD, monitoring, and LLM cost controls.
+### Network Implementation Engineer — Gazinformservice
+**August 2023 — May 2024 · St. Petersburg, Russia**
 
-### BFT-Holding — Manual QA Engineer
-**Russia · 2024–2025**
+- Implemented, diagnosed and supported network and server infrastructure: node reachability, open ports, service health, TCP/IP, VLAN, SSH, Linux, Docker, PostgreSQL.
+- Standardised diagnostic checklists and health checks with Python and Bash scripting, cutting a routine verification cycle from ~45 to ~5 minutes; documented deployment, recovery and rollback.
 
-- Authored approximately 140 API/Postman test cases across 25+ endpoints and 30 core user flows; covered functional, regression, negative, integration, UI/API, and PostgreSQL data checks.
-- Reduced regression setup from approximately 6 hours to 1.5 hours and reopened defects by approximately 35%; logged 200+ defects including 18 critical pre-release issues across 12 releases.
+## Selected projects
 
-### Gazinformservice — Network Implementation Engineer
-**Russia · 2023–2024**
+- **[FortuneVoice for Windows](https://github.com/downmeansoff/fortunevoice-win)** — ported a colleague's macOS dictation app to Windows: Swift, WhisperKit and CoreML rebuilt on Python and faster-whisper, preserving the original's latency pipeline, safety nets and test suite. Inference runs entirely on-device — offline, no telemetry.
+- **[Fortune Network Platform](https://github.com/downmeansoff/distributed-relay-platform)** — public sanitized architecture reference for the production system above: control-plane / data-plane separation, versioned API contracts, health-aware routing, guarded rollout with approval gates and rollback, runnable Docker demo and CI pipeline.
+- **Personal automation agents** — scheduled LLM agents I run daily: next-day calendar assembly, a world-news digest and a personal digest. Python, cron jobs, structured outputs, cost-bounded prompts.
 
-- Automated 40+ health checks across 60 nodes with 15 Python/Bash scripts, reducing routine diagnostics from approximately 45 minutes to 5 minutes.
-- Added pre-deployment validation, structured logging, and rollback-ready procedures for Linux/Docker services; reduced failed deployments from approximately 20% to 5% across 30+ rollouts.
+## Education & certification
 
-## Selected Projects
+**Specialist, Information Security of Automated Systems (10.05.03)** — 5th year, expected 2027  
+Samara National Research University · Samara, Russia  
+Positive Technologies (PT EdTechLab) — Network Attack Analysis with NTA, 2026.
 
-### Supply-Chain RAG
+## Technical skills
 
-Built document preparation, chunking, embeddings, cosine vector search, a FastAPI `/query` endpoint, and offline evaluation over 54 labeled questions. Improved paraphrase Recall@1 from 0.50 to 0.65 and MRR from 0.62 to 0.72 versus a TF-IDF baseline. Keyword results led to a hybrid lexical+dense retrieval design with a reranking boundary.
+**AI & LLM** — Python, RAG, embeddings, vector search, multi-agent orchestration, prompt engineering, structured outputs, JSON Schema, tool calling, MCP, LangGraph, Temporal, OpenAI API + Agents SDK, Anthropic API + Claude Agent SDK, OpenRouter, retrieval evaluation (recall@k, MRR), LLM cost control.
 
-### VibeSpec — Public AI Reliability Project
+**Backend & Data** — FastAPI, Pydantic, asyncio, REST APIs, webhooks, PostgreSQL, Redis, SQL, Go, TypeScript.
 
-Python contract, safety, and observability layer for autonomous AI API clients: live schema discovery, local validation, approval and cost gates, idempotency, exact retry handling, schema drift detection, secret-safe tracing, HTML reports, tests, and CI.  
-https://github.com/downmeansoff/vibespec
+**DevOps & Observability** — Docker, Linux, Bash, Git, GitHub Actions, CI/CD, n8n, Prometheus, Sentry, tracing, incident response.
 
-### Agentic RAG Reliability Reference
-
-Public reference with Pydantic schemas, TF-IDF and injected dense retrieval, reciprocal-rank fusion, an optional reranker interface, Recall@k/MRR, failure buckets, and deterministic tests.  
-https://github.com/downmeansoff/downmeansoff/tree/main/agentic-rag-reference
-
-### Distributed Secure Access Platform
-
-Go control plane, PostgreSQL, Docker, GitHub Actions, Prometheus, and Bash. Health-aware routing, automatic node exclusion, staging, smoke tests, rolling deployment, monitoring, and rollback for 1,000+ users across 7 nodes.  
-https://github.com/downmeansoff/distributed-relay-platform
-
-## Technical Skills
-
-**Agentic LLM Systems:** OpenAI Responses API, OpenAI Agents SDK, Claude Agent SDK, LangGraph, Temporal, MCP, tool/function calling, structured outputs, JSON Schema, Pydantic, stateful orchestration, context management, memory boundaries, bounded retries, fallbacks, stop conditions, human-in-the-loop.
-
-**RAG & Quality:** document preparation, chunking, embeddings, lexical and vector search, hybrid retrieval, reranking patterns, Recall@k, MRR, golden sets, regression scenarios, LLM tracing, error taxonomy, prompt/model versioning, human review loops.
-
-**Backend & Data:** Python, FastAPI, async/await, typing, testing, PostgreSQL, Redis, SQL, REST APIs, webhooks, Go, TypeScript, Fastify, Prisma.
-
-**Production & AI-native Development:** Docker, Linux, GitHub Actions, CI/CD, Prometheus, Sentry, Langfuse familiarity, structured logging, health checks, staged rollout, rollback, incident response, Claude Code, Codex, Cursor, OpenCode, Git worktrees.
-
-**LLM Serving Fundamentals:** OpenAI-compatible serving, continuous batching, KV cache, quantization, context/concurrency trade-offs, latency and throughput monitoring; primary production ownership has been with hosted models rather than a vLLM cluster.
-
-## Education
-
-### Samara University
-
-**Specialist, Information Security of Automated Systems (10.05.03)**  
-5th year · Expected graduation: February 2028
+**Languages** — Russian (native), English (C1), Hebrew (A1).
