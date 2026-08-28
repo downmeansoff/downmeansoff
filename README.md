@@ -49,15 +49,24 @@ Detailed production-oriented portfolio covering:
 - hybrid retrieval, reranking boundaries, Recall@k, and MRR;
 - self-hosted serving readiness and vLLM operational concepts.
 
-### [Agentic RAG Reliability Reference](agentic-rag-reference/README.md)
+### [Agentic RAG Reliability Reference](https://github.com/downmeansoff/agentic-rag-reference)
 
-Compact public reference with:
+[![CI](https://github.com/downmeansoff/agentic-rag-reference/actions/workflows/ci.yml/badge.svg)](https://github.com/downmeansoff/agentic-rag-reference/actions/workflows/ci.yml)
+
+Standalone runnable repository. `python benchmark.py` reproduces every number in
+[`reports/results.md`](https://github.com/downmeansoff/agentic-rag-reference/blob/main/reports/results.md).
 
 - Pydantic chunk and search contracts;
-- TF-IDF and injected dense retrieval;
-- reciprocal-rank fusion for hybrid search;
-- optional reranker interface;
-- Recall@k, MRR, retrieval failure buckets, and deterministic tests.
+- BM25 implemented from scratch alongside TF-IDF, so the lexical baseline is explainable;
+- reciprocal-rank fusion for hybrid search, as a testable free function;
+- cross-encoder reranking behind an optional interface;
+- Recall@k, MRR, retrieval failure taxonomy;
+- McNemar and paired bootstrap intervals, so a delta is separated from noise;
+- an annotation protocol for the golden set, with inter-annotator agreement;
+- interchangeable vector stores (in-memory, pgvector, Qdrant) and model providers;
+- 166 tests, no network and no keys, green in GitHub Actions on Python 3.11 and 3.12.
+
+A shortened copy of this material also lives [in this repository](agentic-rag-reference/README.md).
 
 ---
 
