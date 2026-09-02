@@ -49,6 +49,34 @@ Detailed production-oriented portfolio covering:
 - hybrid retrieval, reranking boundaries, Recall@k, and MRR;
 - self-hosted serving readiness and vLLM operational concepts.
 
+### [MCP Guarded Server](https://github.com/downmeansoff/mcp-guarded-server)
+
+[![CI](https://github.com/downmeansoff/mcp-guarded-server/actions/workflows/ci.yml/badge.svg)](https://github.com/downmeansoff/mcp-guarded-server/actions/workflows/ci.yml)
+
+A Model Context Protocol server with a security model, and the tests that prove it. An
+MCP server is a remote-code-execution surface driven by a language model on the user's
+behalf, so the interesting engineering is not how to expose a tool but how to expose one
+that a confused or manipulated model cannot misuse.
+
+- three permission tiers: `SAFE` auto-allowed, `GUARDED` requires an explicit policy
+  grant, `PRIVILEGED` requires a human approval callback and is refused when none is wired;
+- a path jail that resolves and then verifies containment component-wise rather than by
+  string prefix, opened with `O_NOFOLLOW` and `O_NONBLOCK` so neither a symlink nor a FIFO
+  can defeat or wedge it, with an adversarial traversal battery in the tests;
+- tool results wrapped as untrusted data with a per-call nonce, and an injection detector
+  that reports rather than filters, with the reasoning written down;
+- a token-bucket rate limiter with an injected clock, a concurrency cap and a per-session
+  byte budget, so the limits are deterministic and testable;
+- an append-only, hash-chained audit log that stores argument digests and never raw
+  arguments;
+- a 47-check protocol conformance suite driven over the wire: handshake ordering, version
+  negotiation, framing, id echo, JSON-RPC error codes.
+
+974 tests, no network and no API keys.
+[`THREAT_MODEL.md`](https://github.com/downmeansoff/mcp-guarded-server/blob/main/THREAT_MODEL.md)
+states the attacker, the trust boundaries, the residual risk per threat and what is
+explicitly out of scope.
+
 ### [Agent Runtime Reference](https://github.com/downmeansoff/agent-runtime-reference)
 
 [![CI](https://github.com/downmeansoff/agent-runtime-reference/actions/workflows/ci.yml/badge.svg)](https://github.com/downmeansoff/agent-runtime-reference/actions/workflows/ci.yml)
