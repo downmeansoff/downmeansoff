@@ -49,6 +49,30 @@ Detailed production-oriented portfolio covering:
 - hybrid retrieval, reranking boundaries, Recall@k, and MRR;
 - self-hosted serving readiness and vLLM operational concepts.
 
+### [Agent Runtime Reference](https://github.com/downmeansoff/agent-runtime-reference)
+
+[![CI](https://github.com/downmeansoff/agent-runtime-reference/actions/workflows/ci.yml/badge.svg)](https://github.com/downmeansoff/agent-runtime-reference/actions/workflows/ci.yml)
+
+A durable, typed runtime for multi-step LLM agents. The premise: the hard part of an agent
+is not the prompt, it is state, failure and cost.
+
+- a typed state machine over an append-only event log, so a run can be resumed after a
+  crash and replayed deterministically against recorded model and tool results;
+- discriminated-union transitions, so a step cannot forget to say what happens next;
+- four independent stop conditions (step limit, budget, terminal transition, no-progress
+  detection), with `DEGRADED` as a first-class outcome carrying a machine-readable reason;
+- budget checked before every model call rather than after, across tokens, cost and calls;
+- tools validated against a JSON Schema before execution, with permission levels and a
+  human approval gate for destructive actions;
+- structured output with a single repair round that feeds the validation error back;
+- guardrails that deliberately do not use the model's self-reported confidence as a signal;
+- a regression suite of 16 scripted failure scenarios asserting 92 named invariants.
+
+243 tests, no network and no API keys.
+[`DESIGN.md`](https://github.com/downmeansoff/agent-runtime-reference/blob/main/DESIGN.md)
+states each decision as problem, chosen solution, rejected alternative and the cost of the
+choice.
+
 ### [Agentic RAG Reliability Reference](https://github.com/downmeansoff/agentic-rag-reference)
 
 [![CI](https://github.com/downmeansoff/agentic-rag-reference/actions/workflows/ci.yml/badge.svg)](https://github.com/downmeansoff/agentic-rag-reference/actions/workflows/ci.yml)
