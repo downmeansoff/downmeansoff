@@ -33,7 +33,7 @@ A multi-agent pipeline for extraction, validation and routing. Documents and mai
 
 ### Problem
 
-A clinic needed booking, rescheduling, follow-up reminders and answers to routine questions without adding reception staff. The domain carries two hard constraints: patient data falls under Russian personal-data law (152-FZ), and an assistant that talks to patients all day can quietly become expensive.
+A clinic needed booking, rescheduling, follow-up reminders and answers to routine questions without adding reception staff. The domain carries two hard constraints: identifiable patient data must never reach the model, and an assistant that talks to patients all day can quietly become expensive.
 
 ### System
 
@@ -42,7 +42,7 @@ A conversational agent over the clinic's knowledge base and scheduling system: i
 ### My responsibility
 
 - conversation and context design with a bounded token cost per dialogue;
-- 152-FZ handling: what is stored, what is passed to a model, what never leaves the perimeter;
+- patient identifiers substituted before the model call and restored on our side, so the prompt carries the request and not the person;
 - knowledge-base retrieval behind the answers (see case 3);
 - refusal and handover paths for clinical questions the agent must not answer;
 - reminder scheduling with idempotency, so a retry never double-books or double-notifies.
