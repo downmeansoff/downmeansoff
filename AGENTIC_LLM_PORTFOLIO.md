@@ -17,7 +17,7 @@ This portfolio focuses on production agentic systems, retrieval quality, LLM rel
 
 ---
 
-## Case 1 — Multi-agent production workflow
+## Case 1: Multi-agent production workflow
 
 ### Problem
 
@@ -66,7 +66,7 @@ flowchart LR
 
 ---
 
-## Case 2 — Supply-Chain RAG and retrieval evaluation
+## Case 2: Supply-Chain RAG and retrieval evaluation
 
 ### Scope
 
@@ -93,7 +93,7 @@ Built a Python/FastAPI RAG service with document preparation, chunking, embeddin
 
 ---
 
-## Case 3 — Distributed production platform
+## Case 3: Distributed production platform
 
 [Distributed Secure Access Platform](https://github.com/downmeansoff/distributed-relay-platform) is a sanitized public architecture reference for a private production system serving 3,000+ users across 7 nodes and 5 client channels.
 
@@ -113,9 +113,9 @@ This work shaped how I design LLM systems: agents are another distributed compon
 
 For agent and RAG systems I separate three layers of quality:
 
-1. **Deterministic correctness** — schema validation, tool arguments, permissions, idempotency, state transitions, and integration tests.
-2. **Offline model quality** — golden sets, retrieval metrics, expected tool paths, prompt/model regression checks, and human-reviewed examples.
-3. **Production behavior** — latency, token and model cost, error taxonomy, retry rate, fallback rate, approval rate, and user feedback.
+1. **Deterministic correctness**: schema validation, tool arguments, permissions, idempotency, state transitions, and integration tests.
+2. **Offline model quality**: golden sets, retrieval metrics, expected tool paths, prompt/model regression checks, and human-reviewed examples.
+3. **Production behavior**: latency, token and model cost, error taxonomy, retry rate, fallback rate, approval rate, and user feedback.
 
 A model or prompt change should be traceable to a version and evaluated against the same scenario set before rollout.
 

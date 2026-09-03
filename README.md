@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="100%" src="./assets/header.svg" alt="Gleb Lutfullin — Agentic LLM Engineer, RAG and Production AI Systems" />
+<img width="100%" src="./assets/header.svg" alt="Gleb Lutfullin: Agentic LLM Engineer, RAG and Production AI Systems" />
 
 [![Telegram](https://img.shields.io/badge/Telegram-@oldkindmvn-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/oldkindmvn)
 [![Email](https://img.shields.io/badge/Email-gleblutfullina%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:gleblutfullina@gmail.com)
@@ -181,7 +181,7 @@ This background shapes how I design LLM systems: agents need the same discipline
 ## Education
 
 **Samara National Research University**  
-5th-year Specialist student — **Information Security of Automated Systems (10.05.03)**  
+5th-year Specialist student, **Information Security of Automated Systems (10.05.03)**  
 Expected graduation: **2027** · English: **C1**
 
 ---

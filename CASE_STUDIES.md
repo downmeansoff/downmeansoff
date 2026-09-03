@@ -78,7 +78,7 @@ A Python/FastAPI retrieval service with document preparation, chunking, embeddin
 
 ### Public reference
 
-[`agentic-rag-reference`](agentic-rag-reference/README.md) — runnable code showing the same controls on generic data: Pydantic chunk and search contracts, lexical + dense reciprocal-rank fusion, an optional reranker boundary, Recall@k and MRR, retrieval failure buckets, and deterministic tests.
+[`agentic-rag-reference`](agentic-rag-reference/README.md): runnable code showing the same controls on generic data: Pydantic chunk and search contracts, lexical + dense reciprocal-rank fusion, an optional reranker boundary, Recall@k and MRR, retrieval failure buckets, and deterministic tests.
 
 ---
 
