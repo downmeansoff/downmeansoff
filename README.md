@@ -101,6 +101,28 @@ is not the prompt, it is state, failure and cost.
 states each decision as problem, chosen solution, rejected alternative and the cost of the
 choice.
 
+### [LLM Gateway Reference](https://github.com/downmeansoff/llm-gateway-reference)
+
+[![CI](https://github.com/downmeansoff/llm-gateway-reference/actions/workflows/ci.yml/badge.svg)](https://github.com/downmeansoff/llm-gateway-reference/actions/workflows/ci.yml)
+
+One request surface in front of several LLM providers. A consumer presents a gateway key and
+asks for a logical model with the capabilities it needs; the gateway resolves the key to
+upstream credentials the consumer never sees, checks scope and remaining budget, looks for an
+answer it can legitimately reuse, and picks a provider.
+
+- routing by declared capability, context window, projected cost of this request and health;
+- virtual keys with scopes and immediate revocation, over credentials the consumer never sees;
+- request, token and budget quotas, reserved before the call and settled after it;
+- fallback chains with three dispositions, and a recorded attempt for every candidate, so the
+  response says which provider served the request and why each earlier one did not;
+- a circuit breaker with a single-call half-open probe;
+- a semantic cache with an exact fast path and a discriminator guard against near-duplicates;
+- cost accounting in integer micro-dollars over a replaceable price table;
+- 951 tests, no network, no keys and no HTTP client anywhere in the repository.
+
+[`QUESTIONS.md`](https://github.com/downmeansoff/llm-gateway-reference/blob/main/QUESTIONS.md)
+answers the eleven questions this code invites, including what breaks first if it is deployed.
+
 ### [Agentic RAG Reliability Reference](https://github.com/downmeansoff/agentic-rag-reference)
 
 [![CI](https://github.com/downmeansoff/agentic-rag-reference/actions/workflows/ci.yml/badge.svg)](https://github.com/downmeansoff/agentic-rag-reference/actions/workflows/ci.yml)
