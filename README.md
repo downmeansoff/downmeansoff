@@ -16,6 +16,10 @@
 ![RAG](https://img.shields.io/badge/RAG_eval_questions-54-F59E0B?style=flat-square)
 ![Users](https://img.shields.io/badge/Production_users-3000%2B-0EA5E9?style=flat-square)
 
+<br/>
+
+**Telegram [@oldkindmvn](https://t.me/oldkindmvn) · [gleblutfullina@gmail.com](mailto:gleblutfullina@gmail.com) · Samara, Russia · open to remote**
+
 </div>
 
 ## Profile
@@ -47,7 +51,7 @@ Detailed production-oriented portfolio covering:
 - retries, fallbacks, stop conditions, and degraded states;
 - evaluation, tracing, regression scenarios, and human review;
 - hybrid retrieval, reranking boundaries, Recall@k, and MRR;
-- self-hosted serving readiness and vLLM operational concepts.
+- the serving boundary: capability routing, fallback chains, and capacity trade-offs.
 
 ### [MCP Guarded Server](https://github.com/downmeansoff/mcp-guarded-server)
 

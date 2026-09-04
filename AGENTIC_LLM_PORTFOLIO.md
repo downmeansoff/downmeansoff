@@ -121,11 +121,11 @@ A model or prompt change should be traceable to a version and evaluated against 
 
 ---
 
-## Self-hosted serving readiness
+## Serving and inference boundary
 
-My primary commercial production experience has been with OpenAI, Anthropic, and OpenRouter rather than owning a vLLM cluster. I do not present self-hosted inference as a completed production achievement.
+Production work runs on hosted model APIs: OpenAI, Anthropic and OpenRouter, with capability-based routing, fallback chains, budget reservation and provider health checks built on top of them.
 
-I can work with infrastructure teams on the serving boundary and understand the operational trade-offs around continuous batching, KV-cache pressure, quantization, context length, concurrency, latency versus throughput, OpenAI-compatible APIs, model routing, health checks, and capacity monitoring. I am prepared to deepen hands-on vLLM ownership on the project rather than treating serving as a black box.
+I work the serving boundary with infrastructure teams and reason about it in operational terms: continuous batching, KV-cache pressure, context length, concurrency, latency versus throughput, OpenAI-compatible APIs, model routing, health checks and capacity monitoring.
 
 ---
 
