@@ -76,9 +76,15 @@ A Python/FastAPI retrieval service with document preparation, chunking, embeddin
 - keyword queries showed that dense retrieval was not universally better;
 - recommended hybrid lexical+dense retrieval and a reranking stage.
 
+The labeled set was small, 54 questions across three query classes, so the
+paraphrase gain rests on a handful of questions. That was enough to choose the
+hybrid design and not enough to report as an effect size, which is why the
+public reference implements paired significance tests instead of quoting a bare
+difference in means.
+
 ### Public reference
 
-[`agentic-rag-reference`](agentic-rag-reference/README.md): runnable code showing the same controls on generic data: Pydantic chunk and search contracts, lexical + dense reciprocal-rank fusion, an optional reranker boundary, Recall@k and MRR, retrieval failure buckets, and deterministic tests.
+[`agentic-rag-reference`](https://github.com/downmeansoff/agentic-rag-reference): runnable code showing the same controls on generic data, 166 tests, no network and no keys: Pydantic chunk and search contracts, lexical + dense reciprocal-rank fusion, an optional reranker boundary, Recall@k and MRR, retrieval failure buckets, and deterministic tests. It also carries what this project did not have, McNemar and a paired bootstrap over the same query set, so that a reported gain can be told apart from noise. A shortened excerpt of it lives [in this repository](agentic-rag-reference/README.md).
 
 ---
 

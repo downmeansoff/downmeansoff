@@ -89,7 +89,7 @@ Built a Python/FastAPI RAG service with document preparation, chunking, embeddin
 
 ### Public reference
 
-[Agentic RAG Reliability Reference](agentic-rag-reference/README.md) demonstrates Pydantic contracts, lexical+dense fusion through reciprocal-rank fusion, an optional reranker boundary, Recall@k/MRR, failure buckets, and deterministic tests.
+[Agentic RAG Reliability Reference](https://github.com/downmeansoff/agentic-rag-reference) demonstrates Pydantic contracts, lexical+dense fusion through reciprocal-rank fusion, an optional reranker boundary, Recall@k/MRR, failure buckets, and deterministic tests, 166 of them. A shortened excerpt lives [in this repository](agentic-rag-reference/README.md).
 
 ---
 
