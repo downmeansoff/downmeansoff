@@ -4,6 +4,7 @@
 
 [![Telegram](https://img.shields.io/badge/Telegram-@oldkindmvn-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/oldkindmvn)
 [![Email](https://img.shields.io/badge/Email-gleblutfullina%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:gleblutfullina@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-downmeansoff-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/downmeansoff)
 [![Agentic Portfolio](https://img.shields.io/badge/Agentic_LLM_Portfolio-111827?style=for-the-badge&logo=readthedocs&logoColor=white)](AGENTIC_LLM_PORTFOLIO.md)
 [![Case Studies](https://img.shields.io/badge/Engineering_Case_Studies-374151?style=for-the-badge&logo=readthedocs&logoColor=white)](CASE_STUDIES.md)
 [![CV](https://img.shields.io/badge/View_CV-2563EB?style=for-the-badge&logo=readme&logoColor=white)](CV.md)
